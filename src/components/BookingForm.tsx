@@ -52,9 +52,82 @@ const BookingForm = ({ inline = false }: BookingFormProps) => {
   };
 
   const containerClass = inline
-    ? "bg-white/95 backdrop-blur-sm p-6 rounded-lg shadow-xl"
+    ? "bg-white/95 backdrop-blur-sm p-3 rounded-lg shadow-xl"
     : "bg-card p-8 rounded-lg shadow-lg border";
 
+  // For inline form, show only essential fields
+  if (inline) {
+    return (
+      <form onSubmit={handleSubmit} className={containerClass}>
+        <div className="space-y-2">
+          <div>
+            <Label htmlFor="name-inline" className="text-xs mb-0.5">Name *</Label>
+            <Input
+              id="name-inline"
+              placeholder="Your name"
+              value={formData.name}
+              onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+              required
+              className="h-8 text-xs"
+            />
+          </div>
+
+          <div>
+            <Label htmlFor="mobile-inline" className="text-xs mb-0.5">Mobile *</Label>
+            <Input
+              id="mobile-inline"
+              type="tel"
+              placeholder="+91 73490 91759"
+              value={formData.mobile}
+              onChange={(e) => setFormData({ ...formData, mobile: e.target.value })}
+              required
+              className="h-8 text-xs"
+            />
+          </div>
+
+          <div>
+            <Label htmlFor="pickup-inline" className="text-xs mb-0.5">Pickup *</Label>
+            <div className="relative">
+              <MapPin className="absolute left-2 top-2 w-3 h-3 text-muted-foreground" />
+              <Input
+                id="pickup-inline"
+                placeholder="Pickup location"
+                className="pl-7 h-8 text-xs"
+                value={formData.pickup}
+                onChange={(e) => setFormData({ ...formData, pickup: e.target.value })}
+                required
+              />
+            </div>
+          </div>
+
+          <div>
+            <Label htmlFor="drop-inline" className="text-xs mb-0.5">Drop *</Label>
+            <div className="relative">
+              <MapPin className="absolute left-2 top-2 w-3 h-3 text-muted-foreground" />
+              <Input
+                id="drop-inline"
+                placeholder="Drop location"
+                className="pl-7 h-8 text-xs"
+                value={formData.drop}
+                onChange={(e) => setFormData({ ...formData, drop: e.target.value })}
+                required
+              />
+            </div>
+          </div>
+        </div>
+
+        <Button
+          type="submit"
+          className="w-full mt-3 bg-primary text-primary-foreground hover:bg-primary/90 font-semibold py-2 text-xs h-8"
+        >
+          <Car className="w-3 h-3 mr-1.5" />
+          Book Now
+        </Button>
+      </form>
+    );
+  }
+
+  // Full form for non-inline usage
   return (
     <form onSubmit={handleSubmit} className={containerClass}>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">

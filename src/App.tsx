@@ -22,6 +22,8 @@ import Terms from "./pages/Terms";
 import Privacy from "./pages/Privacy";
 import RefundPolicy from "./pages/RefundPolicy";
 import NotFound from "./pages/NotFound";
+import RoutePageWrapper from "./pages/RoutePageWrapper";
+import AllRoutes from "./pages/AllRoutes";
 
 const queryClient = new QueryClient();
 
@@ -71,7 +73,13 @@ const App = () => (
             <Route path="/privacy" element={<Privacy />} />
             <Route path="/refund" element={<RefundPolicy />} />
             
-            {/* Catch-all route */}
+            {/* All Routes Listing Page */}
+            <Route path="/all-routes" element={<AllRoutes />} />
+            
+            {/* Dynamic Route Pages - Must be after all specific routes */}
+            <Route path="/:slug" element={<RoutePageWrapper />} />
+            
+            {/* Catch-all route for truly invalid paths */}
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Layout>
