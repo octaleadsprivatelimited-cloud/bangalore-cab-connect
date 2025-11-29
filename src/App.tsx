@@ -22,8 +22,9 @@ import Terms from "./pages/Terms";
 import Privacy from "./pages/Privacy";
 import RefundPolicy from "./pages/RefundPolicy";
 import NotFound from "./pages/NotFound";
+import { lazy, Suspense } from "react";
 import RoutePageWrapper from "./pages/RoutePageWrapper";
-import AllRoutes from "./pages/AllRoutes";
+const AllRoutes = lazy(() => import("./pages/AllRoutes"));
 
 const queryClient = new QueryClient();
 
@@ -74,7 +75,15 @@ const App = () => (
             <Route path="/refund" element={<RefundPolicy />} />
             
             {/* All Routes Listing Page */}
-            <Route path="/all-routes" element={<AllRoutes />} />
+            <Route path="/all-routes" element={
+              <Suspense fallback={
+                <div className="flex items-center justify-center min-h-screen">
+                  <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary"></div>
+                </div>
+              }>
+                <AllRoutes />
+              </Suspense>
+            } />
             
             {/* Dynamic Route Pages - Must be after all specific routes */}
             <Route path="/:slug" element={<RoutePageWrapper />} />

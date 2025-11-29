@@ -717,14 +717,15 @@ routes.forEach((route) => {
   routesBySlug.set(finalSlug, { ...route, slug: finalSlug });
 });
 
-// Helper to get route by slug (case-insensitive)
+// Helper to get route by slug (case-insensitive, optimized)
 export const getRouteBySlug = (slug: string): RouteData | undefined => {
   const lowerSlug = slug.toLowerCase();
-  // Try exact match first
+  // Try exact match first (most common case)
   if (routesBySlug.has(lowerSlug)) {
     return routesBySlug.get(lowerSlug);
   }
-  // Try to find by case-insensitive match
+  // Fallback: case-insensitive search (only if needed)
+  // This is optimized to break early
   for (const [key, value] of routesBySlug.entries()) {
     if (key.toLowerCase() === lowerSlug) {
       return value;

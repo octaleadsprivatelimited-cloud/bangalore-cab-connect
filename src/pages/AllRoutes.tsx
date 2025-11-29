@@ -1,52 +1,76 @@
 import { Link } from "react-router-dom";
 import { Card } from "@/components/ui/card";
-import { routes } from "@/data/routes";
 import { MapPin, Car } from "lucide-react";
 import { Input } from "@/components/ui/input";
-import { useState } from "react";
+import { useState, useMemo, useEffect } from "react";
+import type { RouteData } from "@/data/routes";
 
 const AllRoutes = () => {
   const [searchTerm, setSearchTerm] = useState("");
+  const [routes, setRoutes] = useState<RouteData[]>([]);
+  const [loading, setLoading] = useState(true);
 
-  // Filter routes based on search term
-  const filteredRoutes = routes.filter((route) =>
-    route.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    route.from.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    route.to.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+  // Lazy load routes data
+  useEffect(() => {
+    import("@/data/routes").then((module) => {
+      setRoutes(module.routes);
+      setLoading(false);
+    });
+  }, []);
 
-  // Group routes by category
-  const groupedRoutes = {
-    "Bangalore to Destinations": filteredRoutes.filter((r) =>
-      r.title.toLowerCase().startsWith("bangalore to") &&
-      !r.title.toLowerCase().includes("taxi service in") &&
-      !r.title.toLowerCase().includes("outstation cabs")
-    ),
-    "Cities to Bangalore": filteredRoutes.filter((r) =>
-      r.title.toLowerCase().includes("to bangalore") &&
-      !r.title.toLowerCase().startsWith("bangalore")
-    ),
-    "Outstation Cabs": filteredRoutes.filter((r) =>
-      r.title.toLowerCase().includes("outstation cabs")
-    ),
-    "Taxi Service in Cities": filteredRoutes.filter((r) =>
-      r.title.toLowerCase().includes("taxi service in")
-    ),
-    "Chennai Routes": filteredRoutes.filter((r) =>
-      r.title.toLowerCase().startsWith("chennai to")
-    ),
-    "Coimbatore Routes": filteredRoutes.filter((r) =>
-      r.title.toLowerCase().startsWith("coimbatore to")
-    ),
-    "Other Routes": filteredRoutes.filter((r) =>
-      !r.title.toLowerCase().startsWith("bangalore to") &&
-      !r.title.toLowerCase().includes("to bangalore") &&
-      !r.title.toLowerCase().includes("outstation cabs") &&
-      !r.title.toLowerCase().includes("taxi service in") &&
-      !r.title.toLowerCase().startsWith("chennai to") &&
-      !r.title.toLowerCase().startsWith("coimbatore to")
-    ),
-  };
+  // Memoize filtered routes for performance
+  const filteredRoutes = useMemo(() => {
+    if (!routes.length) return [];
+    return routes.filter((route) =>
+      route.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      route.from.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      route.to.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+  }, [routes, searchTerm]);
+
+  // Memoize grouped routes for performance
+  const groupedRoutes = useMemo(() => {
+    if (!filteredRoutes.length) return {};
+    return {
+      "Bangalore to Destinations": filteredRoutes.filter((r) =>
+        r.title.toLowerCase().startsWith("bangalore to") &&
+        !r.title.toLowerCase().includes("taxi service in") &&
+        !r.title.toLowerCase().includes("outstation cabs")
+      ),
+      "Cities to Bangalore": filteredRoutes.filter((r) =>
+        r.title.toLowerCase().includes("to bangalore") &&
+        !r.title.toLowerCase().startsWith("bangalore")
+      ),
+      "Outstation Cabs": filteredRoutes.filter((r) =>
+        r.title.toLowerCase().includes("outstation cabs")
+      ),
+      "Taxi Service in Cities": filteredRoutes.filter((r) =>
+        r.title.toLowerCase().includes("taxi service in")
+      ),
+      "Chennai Routes": filteredRoutes.filter((r) =>
+        r.title.toLowerCase().startsWith("chennai to")
+      ),
+      "Coimbatore Routes": filteredRoutes.filter((r) =>
+        r.title.toLowerCase().startsWith("coimbatore to")
+      ),
+      "Other Routes": filteredRoutes.filter((r) =>
+        !r.title.toLowerCase().startsWith("bangalore to") &&
+        !r.title.toLowerCase().includes("to bangalore") &&
+        !r.title.toLowerCase().includes("outstation cabs") &&
+        !r.title.toLowerCase().includes("taxi service in") &&
+        !r.title.toLowerCase().startsWith("chennai to") &&
+        !r.title.toLowerCase().startsWith("coimbatore to")
+      ),
+    };
+  }, [filteredRoutes]);
+
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center min-h-screen">
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary"></div>
+      </div>
+    );
+  }
 
   return (
     <div className="py-16">
