@@ -11,6 +11,16 @@ import Services from "./pages/Services";
 import BookCab from "./pages/BookCab";
 import Contact from "./pages/Contact";
 import GenericPage from "./pages/GenericPage";
+import AirportTaxi from "./pages/AirportTaxi";
+import LocalTaxi from "./pages/LocalTaxi";
+import Outstation from "./pages/Outstation";
+import CabCharges from "./pages/CabCharges";
+import Testimonials from "./pages/Testimonials";
+import Offers from "./pages/Offers";
+import BlogListing from "./pages/BlogListing";
+import Terms from "./pages/Terms";
+import Privacy from "./pages/Privacy";
+import RefundPolicy from "./pages/RefundPolicy";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -31,9 +41,10 @@ const App = () => (
             <Route path="/contact" element={<Contact />} />
             
             {/* Service Pages */}
-            <Route path="/airport-taxi" element={<GenericPage title="Airport Taxi Bangalore" description="Reliable airport pickup and drop service" content="Professional airport transfer service from Bangalore to Kempegowda International Airport. We offer 24/7 service with flight tracking, meet & greet service, and comfortable rides." />} />
-            <Route path="/local-taxi" element={<GenericPage title="Local Taxi Bangalore" description="City rides at fixed packages" content="Explore Bangalore with our local taxi packages. Choose from 4hrs/40km or 8hrs/80km packages. Perfect for shopping, meetings, and city exploration." />} />
-            <Route path="/outstation" element={<GenericPage title="Outstation Cabs from Bangalore" description="One-way and round trips to nearby cities" content="Comfortable outstation cab service from Bangalore to popular destinations like Mysore, Coorg, Ooty, Chennai, and more. One-way and round-trip options available." />} />
+            <Route path="/airport-taxi" element={<AirportTaxi />} />
+            <Route path="/local-taxi" element={<LocalTaxi />} />
+            <Route path="/outstation" element={<Outstation />} />
+            <Route path="/charges" element={<CabCharges />} />
             <Route path="/corporate" element={<GenericPage title="Corporate Taxi Services" description="Monthly packages for businesses" content="Dedicated corporate cab services with monthly packages, GST invoices, and account managers. Ideal for employee transport and business travel." />} />
             <Route path="/wedding-cars" element={<GenericPage title="Wedding Car Rentals" description="Luxury cars for your special day" content="Premium wedding car rentals in Bangalore. Choose from luxury sedans, SUVs with decoration options. Make your wedding memorable with our professional service." />} />
             <Route path="/tempo-traveller" element={<GenericPage title="Tempo Traveller Rental" description="12-17 seater for group travel" content="Rent tempo traveller in Bangalore for group tours, family trips, and corporate outings. AC vehicles with comfortable push-back seats." />} />
@@ -51,14 +62,14 @@ const App = () => (
             <Route path="/city-tour" element={<GenericPage title="Bangalore City Tour" description="Explore Bangalore's attractions" content="Comprehensive Bangalore city tour packages. Visit Lalbagh, Cubbon Park, Bangalore Palace, ISKCON Temple, and more with our guided tours." />} />
             <Route path="/sedan-rental" element={<GenericPage title="Sedan Cab Rental" description="Comfortable sedans for city rides" content="Rent sedan cars in Bangalore - Swift Dzire, Etios, Honda City. Perfect for airport transfers and city travel at affordable rates." />} />
             <Route path="/suv-rental" element={<GenericPage title="SUV Cab Rental" description="Spacious SUVs for family trips" content="Book SUV cabs in Bangalore - Innova, Ertiga, XUV500. Ideal for family trips and outstation travel with luggage space." />} />
-            <Route path="/charges" element={<GenericPage title="Cab Charges" description="Transparent pricing for all services" content="Bangalore Cabs offers transparent pricing with no hidden charges. Sedan starts at ₹12/km, SUV at ₹18/km. Package deals available." />} />
-            <Route path="/testimonials" element={<GenericPage title="Customer Reviews" description="What our customers say about us" content="Read testimonials from our satisfied customers across Bangalore. 4.8+ rating with 10,000+ happy customers served." />} />
-            <Route path="/offers" element={<GenericPage title="Offers & Discounts" description="Special deals on cab bookings" content="Check our latest offers and discount coupons. First ride discount, referral bonus, and seasonal offers available." />} />
+            <Route path="/testimonials" element={<Testimonials />} />
+            <Route path="/offers" element={<Offers />} />
             <Route path="/driver-guidelines" element={<GenericPage title="Driver Guidelines" description="Standards our drivers follow" content="All our drivers are verified, trained, and follow strict guidelines. Background checked, courteous behavior, and safety protocols." />} />
-            <Route path="/blog" element={<GenericPage title="Blog" description="Travel tips and updates" content="Read our blog for travel tips, destination guides, and company updates. Stay informed about Bangalore travel." />} />
-            <Route path="/terms" element={<GenericPage title="Terms & Conditions" description="Service terms and policies" content="Read our terms and conditions for using Bangalore Cabs services. Booking policies, cancellation terms, and user responsibilities." />} />
-            <Route path="/privacy" element={<GenericPage title="Privacy Policy" description="How we protect your data" content="Your privacy is important to us. Learn how we collect, use, and protect your personal information in compliance with data protection laws." />} />
-            <Route path="/refund" element={<GenericPage title="Refund & Cancellation Policy" description="Cancellation terms and refund process" content="Free cancellation up to 6 hours before ride. Partial refund for cancellations within 6 hours. Refund processed in 5-7 business days." />} />
+            <Route path="/blog" element={<BlogListing />} />
+            <Route path="/blog/:id" element={<GenericPage title="Blog Post" description="Read our latest article" content="Detailed blog content goes here." />} />
+            <Route path="/terms" element={<Terms />} />
+            <Route path="/privacy" element={<Privacy />} />
+            <Route path="/refund" element={<RefundPolicy />} />
             
             {/* Catch-all route */}
             <Route path="*" element={<NotFound />} />
