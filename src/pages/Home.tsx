@@ -86,7 +86,7 @@ const Home = () => {
                 Available 24/7 across Bangalore.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                <a href="tel:+919876543210">
+                <a href="tel:+917349091759">
                   <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold gap-2 text-lg px-8">
                     <Phone className="w-5 h-5" />
                     Call Now
@@ -207,10 +207,10 @@ const Home = () => {
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to Book Your Ride?</h2>
           <p className="text-xl mb-8 opacity-90">Get instant confirmation and best prices guaranteed</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="tel:+919876543210">
+            <a href="tel:+917349091759">
               <Button size="lg" className="bg-secondary text-secondary-foreground hover:bg-secondary/90 font-semibold gap-2">
                 <Phone className="w-5 h-5" />
-                Call +91 98765 43210
+                Call +91 73490 91759
               </Button>
             </a>
             <Link to="/book">

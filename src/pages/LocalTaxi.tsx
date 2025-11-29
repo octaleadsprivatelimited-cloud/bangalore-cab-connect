@@ -42,7 +42,7 @@ const LocalTaxi = () => {
             <Link to="/book">
               <Button size="lg">Book Local Taxi</Button>
             </Link>
-            <a href="tel:+919876543210">
+            <a href="tel:+917349091759">
               <Button size="lg" variant="outline" className="gap-2">
                 <Phone className="w-5 h-5" />
                 Call Now

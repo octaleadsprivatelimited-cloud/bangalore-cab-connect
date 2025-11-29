@@ -21,7 +21,7 @@ const Terms = () => {
             <Card className="p-6">
               <h2 className="text-2xl font-bold mb-4">1. Acceptance of Terms</h2>
               <p className="text-muted-foreground">
-                By booking a cab through Bangalore Cabs, you agree to comply with and be bound by these Terms and Conditions. 
+                By booking a cab through RM Cabs, you agree to comply with and be bound by these Terms and Conditions. 
                 If you do not agree to these terms, please do not use our services.
               </p>
             </Card>
@@ -112,16 +112,17 @@ const Terms = () => {
                 For any questions regarding these Terms & Conditions, please contact us:
               </p>
               <ul className="space-y-2 text-muted-foreground">
-                <li>• Phone: +91 98765 43210</li>
-                <li>• Email: info@bangalorecabs.com</li>
-                <li>• Address: Bangalore, Karnataka, India</li>
+                <li>• Phone: +91 73490 91759 / +91 87924 56886</li>
+                <li>• Email: info@rmcabs.com</li>
+                <li>• Main Office: 109/78, 2nd Floor, HSR Layout, Bangalore, Karnataka 560102</li>
+                <li>• Home Office: Adharshanagar, Arishankunte, Nelamangala, Bangalore 562123</li>
               </ul>
             </Card>
           </div>
 
           <Card className="mt-8 p-6 bg-muted/50">
             <p className="text-sm text-muted-foreground">
-              <strong>Note:</strong> Bangalore Cabs reserves the right to modify these Terms & Conditions at any time 
+              <strong>Note:</strong> RM Cabs reserves the right to modify these Terms & Conditions at any time 
               without prior notice. It is your responsibility to review them periodically. Continued use of our services 
               after changes constitutes acceptance of the modified terms.
             </p>

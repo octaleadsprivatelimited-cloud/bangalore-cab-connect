@@ -42,7 +42,7 @@ const Footer = () => {
                 <span className="text-2xl">🚖</span>
               </div>
               <div>
-                <h3 className="text-lg font-bold">Bangalore Cabs</h3>
+                <h3 className="text-lg font-bold">RM Cabs</h3>
                 <p className="text-xs text-secondary-foreground/70">Premium Taxi Service</p>
               </div>
             </div>
@@ -50,17 +50,26 @@ const Footer = () => {
               Your trusted partner for comfortable and reliable cab services in Bangalore and beyond.
             </p>
             <div className="space-y-2">
-              <a href="tel:+919876543210" className="flex items-center gap-2 text-sm hover:text-primary transition-colors">
+              <a href="tel:+917349091759" className="flex items-center gap-2 text-sm hover:text-primary transition-colors">
                 <Phone className="w-4 h-4" />
-                +91 98765 43210
+                +91 73490 91759
               </a>
-              <a href="mailto:info@bangalorecabs.com" className="flex items-center gap-2 text-sm hover:text-primary transition-colors">
+              <a href="tel:+918792456886" className="flex items-center gap-2 text-sm hover:text-primary transition-colors">
+                <Phone className="w-4 h-4" />
+                +91 87924 56886
+              </a>
+              <a href="mailto:info@rmcabs.com" className="flex items-center gap-2 text-sm hover:text-primary transition-colors">
                 <Mail className="w-4 h-4" />
-                info@bangalorecabs.com
+                info@rmcabs.com
               </a>
-              <div className="flex items-center gap-2 text-sm">
-                <MapPin className="w-4 h-4" />
-                Bangalore, Karnataka
+              <div className="flex items-start gap-2 text-sm">
+                <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0" />
+                <div>
+                  <p className="font-semibold">Main Office:</p>
+                  <p>109/78, 2nd Floor, HSR Layout, Bangalore, Karnataka 560102</p>
+                  <p className="font-semibold mt-2">Home Office:</p>
+                  <p>Adharshanagar, Arishankunte, Nelamangala, Bangalore 562123</p>
+                </div>
               </div>
             </div>
           </div>
@@ -133,7 +142,7 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="border-t border-secondary-foreground/20 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-sm text-secondary-foreground/70">
-            © 2024 Bangalore Cabs. All rights reserved.
+            © 2024 RM Cabs. All rights reserved.
           </p>
           <div className="flex gap-4 mt-4 md:mt-0">
             <a href="#" className="text-secondary-foreground/70 hover:text-primary transition-colors">

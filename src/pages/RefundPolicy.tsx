@@ -100,7 +100,7 @@ const RefundPolicy = () => {
             </Card>
 
             <Card className="p-6">
-              <h2 className="text-2xl font-bold mb-4">Cancellation by Bangalore Cabs</h2>
+              <h2 className="text-2xl font-bold mb-4">Cancellation by RM Cabs</h2>
               <p className="text-muted-foreground mb-4">
                 In rare cases where we need to cancel your booking due to unforeseen circumstances:
               </p>
@@ -122,7 +122,7 @@ const RefundPolicy = () => {
                 <li>• Trip date change - Treated as new booking if within cancellation window</li>
               </ul>
               <p className="text-sm text-muted-foreground">
-                Contact us immediately to request modifications: <strong>+91 98765 43210</strong>
+                Contact us immediately to request modifications: <strong>+91 73490 91759</strong>
               </p>
             </Card>
 
@@ -183,7 +183,7 @@ const RefundPolicy = () => {
                   <Phone className="w-6 h-6 text-primary flex-shrink-0" />
                   <div>
                     <h3 className="font-bold mb-1">Call Us</h3>
-                    <p className="text-sm text-muted-foreground">+91 98765 43210</p>
+                    <p className="text-sm text-muted-foreground">+91 73490 91759</p>
                     <p className="text-xs text-muted-foreground mt-1">Available 24/7</p>
                   </div>
                 </div>
@@ -191,7 +191,7 @@ const RefundPolicy = () => {
                   <Phone className="w-6 h-6 text-primary flex-shrink-0" />
                   <div>
                     <h3 className="font-bold mb-1">WhatsApp</h3>
-                    <p className="text-sm text-muted-foreground">+91 98765 43210</p>
+                    <p className="text-sm text-muted-foreground">+91 73490 91759</p>
                     <p className="text-xs text-muted-foreground mt-1">Quick response</p>
                   </div>
                 </div>
@@ -207,9 +207,9 @@ const RefundPolicy = () => {
                 For any questions or concerns regarding refunds and cancellations:
               </p>
               <ul className="space-y-2 text-muted-foreground">
-                <li>• <strong>Phone:</strong> +91 98765 43210</li>
-                <li>• <strong>Email:</strong> refunds@bangalorecabs.com</li>
-                <li>• <strong>WhatsApp:</strong> +91 98765 43210</li>
+                <li>• <strong>Phone:</strong> +91 73490 91759 / +91 87924 56886</li>
+                <li>• <strong>Email:</strong> info@rmcabs.com</li>
+                <li>• <strong>WhatsApp:</strong> +91 73490 91759</li>
                 <li>• <strong>Support Hours:</strong> 24/7 Available</li>
               </ul>
             </Card>
@@ -218,7 +218,7 @@ const RefundPolicy = () => {
           <Card className="mt-8 p-6 bg-muted/50">
             <p className="text-sm text-muted-foreground">
               <strong>Note:</strong> This cancellation and refund policy is subject to change without prior notice. 
-              Bangalore Cabs reserves the right to modify these terms. Please check this page regularly for updates. 
+              RM Cabs reserves the right to modify these terms. Please check this page regularly for updates. 
               For any disputes, the company's decision will be final.
             </p>
           </Card>

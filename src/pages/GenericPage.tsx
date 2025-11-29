@@ -32,7 +32,7 @@ const GenericPage = ({ title, description, content }: GenericPageProps) => {
                   Book Online
                 </Button>
               </Link>
-              <a href="tel:+919876543210" className="flex-1">
+              <a href="tel:+917349091759" className="flex-1">
                 <Button size="lg" variant="secondary" className="w-full gap-2">
                   <Phone className="w-5 h-5" />
                   Call Now

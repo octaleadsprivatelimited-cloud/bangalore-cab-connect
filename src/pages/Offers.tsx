@@ -166,7 +166,7 @@ const Offers = () => {
           <ul className="space-y-2 text-sm text-muted-foreground">
             <li>• Promo codes are valid only once per user unless specified</li>
             <li>• Cannot be combined with other offers</li>
-            <li>• Bangalore Cabs reserves the right to modify or cancel offers anytime</li>
+            <li>• RM Cabs reserves the right to modify or cancel offers anytime</li>
             <li>• Discount will be adjusted in final bill amount</li>
             <li>• Valid only for online bookings through our platform</li>
           </ul>

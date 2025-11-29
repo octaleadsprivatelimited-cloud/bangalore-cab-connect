@@ -74,7 +74,7 @@ const BookingForm = ({ inline = false }: BookingFormProps) => {
           <Input
             id="mobile"
             type="tel"
-            placeholder="+91 98765 43210"
+            placeholder="+91 73490 91759"
             value={formData.mobile}
             onChange={(e) => setFormData({ ...formData, mobile: e.target.value })}
             required

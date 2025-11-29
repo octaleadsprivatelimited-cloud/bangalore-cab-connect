@@ -25,25 +25,37 @@ const Contact = () => {
     {
       icon: <Phone className="w-6 h-6" />,
       title: "Phone",
-      details: "+91 98765 43210",
-      link: "tel:+919876543210"
+      details: "+91 73490 91759",
+      link: "tel:+917349091759"
+    },
+    {
+      icon: <Phone className="w-6 h-6" />,
+      title: "Phone (Alt)",
+      details: "+91 87924 56886",
+      link: "tel:+918792456886"
     },
     {
       icon: <MessageCircle className="w-6 h-6" />,
       title: "WhatsApp",
-      details: "+91 98765 43210",
-      link: "https://wa.me/919876543210"
+      details: "+91 73490 91759",
+      link: "https://wa.me/917349091759"
     },
     {
       icon: <Mail className="w-6 h-6" />,
       title: "Email",
-      details: "info@bangalorecabs.com",
-      link: "mailto:info@bangalorecabs.com"
+      details: "info@rmcabs.com",
+      link: "mailto:info@rmcabs.com"
     },
     {
       icon: <MapPin className="w-6 h-6" />,
-      title: "Location",
-      details: "Bangalore, Karnataka, India",
+      title: "Main Office",
+      details: "109/78, 2nd Floor, HSR Layout, Bangalore, Karnataka 560102",
+      link: "#"
+    },
+    {
+      icon: <MapPin className="w-6 h-6" />,
+      title: "Home Office",
+      details: "Adharshanagar, Arishankunte, Nelamangala, Bangalore 562123",
       link: "#"
     },
     {
@@ -96,7 +108,7 @@ const Contact = () => {
                   <Input
                     id="phone"
                     type="tel"
-                    placeholder="+91 98765 43210"
+                    placeholder="+91 73490 91759"
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                     required
@@ -141,12 +153,12 @@ const Contact = () => {
                   Need immediate assistance? Our team responds within 5 minutes on WhatsApp and phone calls.
                 </p>
                 <div className="flex gap-3">
-                  <a href="tel:+919876543210" className="flex-1">
+                  <a href="tel:+917349091759" className="flex-1">
                     <Button variant="secondary" className="w-full">
                       Call Now
                     </Button>
                   </a>
-                  <a href="https://wa.me/919876543210" className="flex-1" target="_blank" rel="noopener noreferrer">
+                  <a href="https://wa.me/917349091759" className="flex-1" target="_blank" rel="noopener noreferrer">
                     <Button variant="secondary" className="w-full">
                       WhatsApp
                     </Button>

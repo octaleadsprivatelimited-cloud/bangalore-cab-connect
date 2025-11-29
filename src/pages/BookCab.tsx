@@ -27,14 +27,14 @@ const BookCab = () => {
                   Contact us directly for instant confirmation
                 </p>
                 <div className="space-y-3">
-                  <a href="tel:+919876543210">
+                  <a href="tel:+917349091759">
                     <Button className="w-full gap-2 bg-primary hover:bg-primary/90">
                       <Phone className="w-4 h-4" />
                       Call Now
                     </Button>
                   </a>
                   <a
-                    href="https://wa.me/919876543210?text=Hi, I'd like to book a cab"
+                    href="https://wa.me/917349091759?text=Hi, I'd like to book a cab"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -77,9 +77,9 @@ const BookCab = () => {
                 <p className="text-sm mb-4 opacity-90">
                   Our team is available 24/7 to assist you
                 </p>
-                <a href="mailto:info@bangalorecabs.com" className="flex items-center gap-2 text-sm">
+                <a href="mailto:info@rmcabs.com" className="flex items-center gap-2 text-sm">
                   <Mail className="w-4 h-4" />
-                  info@bangalorecabs.com
+                  info@rmcabs.com
                 </a>
               </Card>
             </div>

@@ -27,7 +27,7 @@ const Outstation = () => {
             <Link to="/book">
               <Button size="lg">Book Outstation Cab</Button>
             </Link>
-            <a href="tel:+919876543210">
+            <a href="tel:+917349091759">
               <Button size="lg" variant="outline" className="gap-2">
                 <Phone className="w-5 h-5" />
                 Get Quote
@@ -165,7 +165,7 @@ const Outstation = () => {
             <Link to="/book">
               <Button size="lg" variant="secondary">Book Now</Button>
             </Link>
-            <a href="tel:+919876543210">
+            <a href="tel:+917349091759">
               <Button size="lg" variant="secondary" className="gap-2">
                 <Phone className="w-5 h-5" />
                 Call for Quote

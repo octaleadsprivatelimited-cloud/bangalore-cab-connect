@@ -13,7 +13,7 @@ const About = () => {
     <div className="py-16">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6 text-center">About Bangalore Cabs</h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-6 text-center">About RM Cabs</h1>
           <p className="text-xl text-muted-foreground text-center mb-12">
             Your trusted partner for premium cab services in Bangalore
           </p>
@@ -33,8 +33,8 @@ const About = () => {
           <div className="prose prose-lg max-w-none">
             <h2 className="text-2xl font-bold mb-4">Who We Are</h2>
             <p className="mb-6 text-foreground/80">
-              Bangalore Cabs is a leading taxi service provider in Bangalore, offering reliable and comfortable transportation 
-              solutions since 2008. We specialize in airport transfers, local city rides, outstation trips, and corporate travel services.
+              RM Cabs is a leading taxi service provider in Bangalore, offering reliable and comfortable transportation 
+              solutions. We specialize in airport transfers, local city rides, outstation trips, and corporate travel services.
             </p>
 
             <h2 className="text-2xl font-bold mb-4">Our Mission</h2>

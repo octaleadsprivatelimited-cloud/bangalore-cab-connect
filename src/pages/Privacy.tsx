@@ -26,7 +26,7 @@ const Privacy = () => {
 
           <Card className="p-6 mb-8 bg-primary/5 border-primary/20">
             <p className="text-muted-foreground">
-              At Bangalore Cabs, we value your privacy and are committed to protecting your personal information. 
+              At RM Cabs, we value your privacy and are committed to protecting your personal information. 
               This Privacy Policy explains how we collect, use, and safeguard your data.
             </p>
           </Card>
@@ -96,7 +96,7 @@ const Privacy = () => {
                 <li>• <strong>Data Portability:</strong> Receive your data in a structured format</li>
               </ul>
               <p className="text-sm text-muted-foreground">
-                To exercise these rights, contact us at info@bangalorecabs.com
+                To exercise these rights, contact us at info@rmcabs.com
               </p>
             </Card>
 
@@ -160,16 +160,17 @@ const Privacy = () => {
                 For privacy-related questions or concerns:
               </p>
               <ul className="space-y-2 text-muted-foreground">
-                <li>• <strong>Email:</strong> privacy@bangalorecabs.com</li>
-                <li>• <strong>Phone:</strong> +91 98765 43210</li>
-                <li>• <strong>Address:</strong> Bangalore, Karnataka, India</li>
+                <li>• <strong>Email:</strong> info@rmcabs.com</li>
+                <li>• <strong>Phone:</strong> +91 73490 91759 / +91 87924 56886</li>
+                <li>• <strong>Main Office:</strong> 109/78, 2nd Floor, HSR Layout, Bangalore, Karnataka 560102</li>
+                <li>• <strong>Home Office:</strong> Adharshanagar, Arishankunte, Nelamangala, Bangalore 562123</li>
               </ul>
             </Card>
           </div>
 
           <Card className="mt-8 p-6 bg-primary/5 border-primary/20">
             <p className="text-sm text-muted-foreground">
-              <strong>Your Consent:</strong> By using Bangalore Cabs services, you consent to the collection and use 
+              <strong>Your Consent:</strong> By using RM Cabs services, you consent to the collection and use 
               of information as described in this Privacy Policy. We are committed to protecting your privacy and 
               maintaining the security of your personal information.
             </p>

@@ -35,7 +35,7 @@ const CabCharges = () => {
             <Link to="/book">
               <Button size="lg">Book Your Cab</Button>
             </Link>
-            <a href="tel:+919876543210">
+            <a href="tel:+917349091759">
               <Button size="lg" variant="outline" className="gap-2">
                 <Phone className="w-5 h-5" />
                 Get Custom Quote
@@ -217,7 +217,7 @@ const CabCharges = () => {
             <Link to="/book">
               <Button size="lg" variant="secondary">Get Quote</Button>
             </Link>
-            <a href="tel:+919876543210">
+            <a href="tel:+917349091759">
               <Button size="lg" variant="secondary" className="gap-2">
                 <Phone className="w-5 h-5" />
                 Call Now
