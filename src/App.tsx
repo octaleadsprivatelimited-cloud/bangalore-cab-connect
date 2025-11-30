@@ -54,12 +54,16 @@ const App = () => (
             <Route path="/luxury-cars" element={<GenericPage title="Luxury Car Rental" description="Premium cars for VIP travel" content="Rent luxury cars like BMW, Mercedes, Audi in Bangalore. Professional chauffeur-driven service for corporate meetings and special occasions." />} />
             <Route path="/24x7-service" element={<GenericPage title="24/7 Taxi Service Bangalore" description="Round-the-clock cab availability" content="Always available taxi service in Bangalore. Late-night pickups, early morning drops, and emergency rides anytime you need." />} />
             
-            {/* Popular Routes */}
-            <Route path="/bangalore-to-mysore" element={<GenericPage title="Bangalore to Mysore Taxi" description="Comfortable 3-hour ride to Mysore" content="Book a cab from Bangalore to Mysore. Enjoy a comfortable 150km journey in 3 hours. Visit Mysore Palace, Chamundi Hills, and Brindavan Gardens." />} />
-            <Route path="/bangalore-to-coorg" element={<GenericPage title="Bangalore to Coorg Taxi" description="Scenic drive to the Scotland of India" content="Travel from Bangalore to Coorg in comfort. 270km journey through scenic routes. Explore coffee plantations, Abbey Falls, and Raja's Seat." />} />
-            <Route path="/bangalore-to-ooty" element={<GenericPage title="Bangalore to Ooty Taxi" description="Hill station getaway from Bangalore" content="Book Bangalore to Ooty cab for a memorable hill station trip. 280km journey with breathtaking views. Visit Botanical Gardens, Ooty Lake, and tea estates." />} />
-            <Route path="/bangalore-to-tirupati" element={<GenericPage title="Bangalore to Tirupati Taxi" description="Pilgrimage trip made comfortable" content="Bangalore to Tirupati cab service for hassle-free darshan. 250km journey in 4 hours. Round trip and one-way options available." />} />
-            <Route path="/bangalore-to-mangalore" element={<GenericPage title="Bangalore to Mangalore Taxi" description="Coastal city connection" content="Travel from Bangalore to Mangalore by cab. 350km journey through Western Ghats. Visit beaches, temples, and enjoy coastal cuisine." />} />
+            {/* All Routes Listing Page */}
+            <Route path="/all-routes" element={
+              <Suspense fallback={
+                <div className="flex items-center justify-center min-h-screen">
+                  <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary"></div>
+                </div>
+              }>
+                <AllRoutes />
+              </Suspense>
+            } />
             
             {/* Additional Pages */}
             <Route path="/city-tour" element={<GenericPage title="Bangalore City Tour" description="Explore Bangalore's attractions" content="Comprehensive Bangalore city tour packages. Visit Lalbagh, Cubbon Park, Bangalore Palace, ISKCON Temple, and more with our guided tours." />} />
@@ -73,17 +77,6 @@ const App = () => (
             <Route path="/terms" element={<Terms />} />
             <Route path="/privacy" element={<Privacy />} />
             <Route path="/refund" element={<RefundPolicy />} />
-            
-            {/* All Routes Listing Page */}
-            <Route path="/all-routes" element={
-              <Suspense fallback={
-                <div className="flex items-center justify-center min-h-screen">
-                  <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary"></div>
-                </div>
-              }>
-                <AllRoutes />
-              </Suspense>
-            } />
             
             {/* Dynamic Route Pages - Must be after all specific routes */}
             <Route path="/:slug" element={<RoutePageWrapper />} />

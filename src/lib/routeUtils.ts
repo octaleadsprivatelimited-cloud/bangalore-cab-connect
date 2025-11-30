@@ -115,4 +115,3 @@ export const estimateRouteInfo = (from: string, to: string): { distance?: string
   // Return undefined if no estimate available
   return {};
 };
-
