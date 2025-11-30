@@ -2,6 +2,7 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Phone, Clock, MapPin, IndianRupee } from "lucide-react";
+import localTaxiImg from "@/assets/local-taxi.jpg";
 
 const LocalTaxi = () => {
   const packages = [
@@ -28,106 +29,125 @@ const LocalTaxi = () => {
     }
   ];
 
+  const popularPlaces = [
+    "Lalbagh Botanical Garden", "Cubbon Park", "Bangalore Palace",
+    "ISKCON Temple", "Wonderla", "Innovative Film City",
+    "Nandi Hills", "Bannerghatta Zoo", "Commercial Street"
+  ];
+
   return (
-    <div className="py-16">
-      <div className="container mx-auto px-4">
-        <div className="max-w-4xl mx-auto text-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">
-            Local Taxi Service in Bangalore
-          </h1>
-          <p className="text-xl text-muted-foreground mb-8">
-            Hourly rental packages for city travel. No per-kilometer worries, just book and explore!
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link to="/book">
-              <Button size="lg">Book Local Taxi</Button>
-            </Link>
-            <a href="tel:+917349091759">
-              <Button size="lg" variant="outline" className="gap-2">
-                <Phone className="w-5 h-5" />
-                Call Now
-              </Button>
-            </a>
+    <div>
+      {/* Hero Section with Background Image */}
+      <section className="relative py-20 md:py-32 overflow-hidden">
+        <div 
+          className="absolute inset-0 bg-cover bg-center z-0"
+          style={{ backgroundImage: `url(${localTaxiImg})` }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-br from-secondary/85 via-secondary/75 to-secondary/85 z-[1]"></div>
+        
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="text-center text-white max-w-3xl mx-auto">
+            <h1 className="text-4xl md:text-5xl font-bold mb-4">Local Taxi Service in Bangalore</h1>
+            <p className="text-xl mb-8 opacity-90">
+              Hourly rental packages for city travel. No per-kilometer worries, just book and explore!
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a href="tel:+917349091759">
+                <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 font-semibold gap-2">
+                  <Phone className="w-5 h-5" />
+                  Call Now
+                </Button>
+              </a>
+              <Link to="/book">
+                <Button size="lg" className="bg-white/20 backdrop-blur-sm border-2 border-white text-white hover:bg-white hover:text-secondary font-semibold">
+                  Book Online
+                </Button>
+              </Link>
+            </div>
           </div>
         </div>
+      </section>
 
-        {/* Package Cards */}
-        <div className="grid md:grid-cols-3 gap-8 mb-16">
-          {packages.map((pkg, index) => (
-            <Card key={index} className="p-6 hover-lift">
-              <div className="text-center mb-6">
-                <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full mb-4">
-                  <Clock className="w-4 h-4" />
-                  <span className="font-bold">{pkg.title}</span>
+      <div className="py-16">
+        <div className="container mx-auto px-4">
+          {/* Package Cards */}
+          <div className="grid md:grid-cols-3 gap-8 mb-16">
+            {packages.map((pkg, index) => (
+              <Card key={index} className="p-6 hover-lift">
+                <div className="text-center mb-6">
+                  <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full mb-4">
+                    <Clock className="w-4 h-4" />
+                    <span className="font-semibold">{pkg.title}</span>
+                  </div>
+                  <div className="text-3xl font-bold text-primary mb-1">{pkg.price}</div>
+                  <div className="text-sm text-muted-foreground">Sedan Starting Price</div>
                 </div>
-                <div className="mb-4">
-                  <div className="text-sm text-muted-foreground mb-1">Sedan</div>
-                  <div className="text-3xl font-bold text-primary">{pkg.sedan}</div>
-                </div>
-                <div>
-                  <div className="text-sm text-muted-foreground mb-1">SUV</div>
-                  <div className="text-2xl font-bold">{pkg.suv}</div>
-                </div>
-              </div>
-              <ul className="space-y-3 mb-6">
-                {pkg.features.map((feature, idx) => (
-                  <li key={idx} className="flex items-start gap-2 text-sm">
-                    <span className="text-primary mt-0.5">✓</span>
-                    <span>{feature}</span>
-                  </li>
-                ))}
-              </ul>
-              <Link to="/book">
-                <Button className="w-full">Book Now</Button>
-              </Link>
-            </Card>
-          ))}
-        </div>
 
-        {/* Popular Uses */}
-        <div className="max-w-4xl mx-auto mb-16">
-          <h2 className="text-3xl font-bold mb-8 text-center">Popular Uses for Local Cabs</h2>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[
-              { icon: <MapPin className="w-6 h-6" />, title: "Shopping Trips", desc: "Visit malls and markets with ease" },
-              { icon: <Clock className="w-6 h-6" />, title: "Business Meetings", desc: "Professional travel for work" },
-              { icon: <IndianRupee className="w-6 h-6" />, title: "Hospital Visits", desc: "Medical appointments made easy" },
-              { icon: <MapPin className="w-6 h-6" />, title: "City Sightseeing", desc: "Explore Bangalore attractions" },
-              { icon: <Clock className="w-6 h-6" />, title: "Family Outings", desc: "Comfortable family travel" },
-              { icon: <IndianRupee className="w-6 h-6" />, title: "Daily Commute", desc: "Regular office travel" },
-            ].map((use, index) => (
-              <Card key={index} className="p-6 text-center">
-                <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center text-primary mx-auto mb-3">
-                  {use.icon}
+                <div className="space-y-3 mb-6">
+                  {pkg.features.map((feature, i) => (
+                    <div key={i} className="flex items-center gap-2">
+                      <div className="w-1.5 h-1.5 bg-primary rounded-full"></div>
+                      <span className="text-sm">{feature}</span>
+                    </div>
+                  ))}
                 </div>
-                <h3 className="font-bold mb-2">{use.title}</h3>
-                <p className="text-sm text-muted-foreground">{use.desc}</p>
+
+                <div className="grid grid-cols-2 gap-4 pt-4 border-t">
+                  <div>
+                    <div className="text-xs text-muted-foreground">Sedan</div>
+                    <div className="font-bold text-primary">{pkg.sedan}</div>
+                  </div>
+                  <div>
+                    <div className="text-xs text-muted-foreground">SUV</div>
+                    <div className="font-bold text-primary">{pkg.suv}</div>
+                  </div>
+                </div>
+
+                <Link to="/book">
+                  <Button className="w-full mt-4">
+                    Book Now
+                  </Button>
+                </Link>
               </Card>
             ))}
           </div>
+
+          {/* Popular Places */}
+          <div className="max-w-4xl mx-auto mb-16">
+            <h2 className="text-3xl font-bold mb-8 text-center">Popular Places to Visit</h2>
+            <Card className="p-8">
+              <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
+                {popularPlaces.map((place, index) => (
+                  <div key={index} className="flex items-start gap-2">
+                    <MapPin className="w-4 h-4 text-primary flex-shrink-0 mt-1" />
+                    <span className="text-sm">{place}</span>
+                  </div>
+                ))}
+              </div>
+            </Card>
+          </div>
+
+          {/* CTA Section */}
+          <Card className="max-w-2xl mx-auto p-8 bg-primary text-primary-foreground text-center">
+            <h3 className="text-2xl font-bold mb-4">Ready to Explore Bangalore?</h3>
+            <p className="mb-6 opacity-90">
+              Book your local taxi now and enjoy hassle-free city travel
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link to="/book">
+                <Button size="lg" variant="secondary">
+                  Book Online
+                </Button>
+              </Link>
+              <a href="tel:+917349091759">
+                <Button size="lg" variant="secondary" className="gap-2">
+                  <Phone className="w-5 h-5" />
+                  Call Now
+                </Button>
+              </a>
+            </div>
+          </Card>
         </div>
-
-        {/* Terms */}
-        <Card className="max-w-3xl mx-auto p-6 mb-8">
-          <h3 className="font-bold mb-4">Package Terms</h3>
-          <ul className="space-y-2 text-sm text-muted-foreground">
-            <li>• Extra hours charged at ₹150/hour (Sedan) and ₹200/hour (SUV)</li>
-            <li>• Extra kilometers charged at ₹12/km (Sedan) and ₹18/km (SUV)</li>
-            <li>• Driver allowance included in package</li>
-            <li>• Parking and toll charges extra</li>
-            <li>• Fuel included in package price</li>
-          </ul>
-        </Card>
-
-        <Card className="max-w-2xl mx-auto p-8 bg-primary text-primary-foreground text-center">
-          <h3 className="text-2xl font-bold mb-4">Ready to Book Your Local Taxi?</h3>
-          <p className="mb-6 opacity-90">
-            Get instant confirmation and start your journey within 30 minutes
-          </p>
-          <Link to="/book">
-            <Button size="lg" variant="secondary">Book Now</Button>
-          </Link>
-        </Card>
       </div>
     </div>
   );

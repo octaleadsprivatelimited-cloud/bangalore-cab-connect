@@ -1,5 +1,6 @@
 import { Card } from "@/components/ui/card";
 import { Users, Award, Clock, Shield } from "lucide-react";
+import heroTaxi from "@/assets/hero-taxi.jpg";
 
 const About = () => {
   const stats = [
@@ -10,14 +11,28 @@ const About = () => {
   ];
 
   return (
-    <div className="py-16">
-      <div className="container mx-auto px-4">
-        <div className="max-w-4xl mx-auto">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6 text-center">About RM Cabs</h1>
-          <p className="text-xl text-muted-foreground text-center mb-12">
-            Your trusted partner for premium cab services in Bangalore
-          </p>
+    <div>
+      {/* Hero Section with Background */}
+      <section className="relative py-20 md:py-32 overflow-hidden">
+        <div 
+          className="absolute inset-0 bg-cover bg-center z-0"
+          style={{ backgroundImage: `url(${heroTaxi})` }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-br from-secondary/90 via-secondary/80 to-secondary/90 z-[1]"></div>
+        
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="max-w-4xl mx-auto text-center text-white">
+            <h1 className="text-4xl md:text-5xl font-bold mb-6">About RM Cabs</h1>
+            <p className="text-xl opacity-90">
+              Your trusted partner for premium cab services in Bangalore
+            </p>
+          </div>
+        </div>
+      </section>
 
+      <div className="py-16">
+        <div className="container mx-auto px-4">
+        <div className="max-w-4xl mx-auto">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
             {stats.map((stat, index) => (
               <Card key={index} className="p-6 text-center">
@@ -63,6 +78,7 @@ const About = () => {
             </p>
           </div>
         </div>
+      </div>
       </div>
     </div>
   );
