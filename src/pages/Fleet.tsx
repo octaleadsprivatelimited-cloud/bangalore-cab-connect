@@ -2,6 +2,9 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Users, Luggage, Fuel, Shield } from "lucide-react";
 import { Link } from "react-router-dom";
+import sedanImg from "@/assets/sedan-car.jpg";
+import suvImg from "@/assets/suv-car.jpg";
+import hatchbackImg from "@/assets/hatchback-car.jpg";
 
 const Fleet = () => {
   const vehicles = [
@@ -12,7 +15,8 @@ const Fleet = () => {
       luggage: "2",
       rate: "₹12/km",
       features: ["AC", "GPS", "Music System"],
-      ideal: "Airport transfers, City rides"
+      ideal: "Airport transfers, City rides",
+      image: sedanImg
     },
     {
       name: "SUV",
@@ -21,16 +25,18 @@ const Fleet = () => {
       luggage: "3-4",
       rate: "₹18/km",
       features: ["AC", "GPS", "Spacious", "Comfortable"],
-      ideal: "Family trips, Outstation"
+      ideal: "Family trips, Outstation",
+      image: suvImg
     },
     {
-      name: "Luxury Sedan",
-      models: "BMW, Mercedes, Audi",
+      name: "Hatchback",
+      models: "Swift, i10, Wagon R",
       passengers: "4",
       luggage: "2",
-      rate: "₹35/km",
-      features: ["Premium AC", "GPS", "Leather Seats", "Premium Sound"],
-      ideal: "Corporate, VIP travel"
+      rate: "₹10/km",
+      features: ["AC", "GPS", "Compact", "Fuel Efficient"],
+      ideal: "Short trips, Budget travel",
+      image: hatchbackImg
     },
     {
       name: "Tempo Traveller",
@@ -39,7 +45,8 @@ const Fleet = () => {
       luggage: "10+",
       rate: "₹25/km",
       features: ["AC", "Push Back Seats", "GPS", "Spacious"],
-      ideal: "Group tours, Events"
+      ideal: "Group tours, Events",
+      image: sedanImg
     }
   ];
 
@@ -55,7 +62,17 @@ const Fleet = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
           {vehicles.map((vehicle, index) => (
-            <Card key={index} className="p-6 hover-lift">
+            <Card key={index} className="overflow-hidden hover-lift">
+              {/* Vehicle Image */}
+              <div className="h-48 overflow-hidden bg-muted">
+                <img 
+                  src={vehicle.image} 
+                  alt={vehicle.name}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              
+              <div className="p-6">
               <div className="flex items-start justify-between mb-4">
                 <div>
                   <h3 className="text-2xl font-bold mb-1">{vehicle.name}</h3>
@@ -103,6 +120,7 @@ const Fleet = () => {
                   Book {vehicle.name}
                 </Button>
               </Link>
+              </div>
             </Card>
           ))}
         </div>
