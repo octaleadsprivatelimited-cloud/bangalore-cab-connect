@@ -77,9 +77,9 @@ const BookCab = () => {
                 <p className="text-sm mb-4 opacity-90">
                   Our team is available 24/7 to assist you
                 </p>
-                <a href="mailto:info@rmcabs.com" className="flex items-center gap-2 text-sm">
+                <a href="mailto:info@rmcabs.in" className="flex items-center gap-2 text-sm">
                   <Mail className="w-4 h-4" />
-                  info@rmcabs.com
+                  info@rmcabs.in
                 </a>
               </Card>
             </div>

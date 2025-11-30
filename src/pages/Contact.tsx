@@ -43,8 +43,8 @@ const Contact = () => {
     {
       icon: <Mail className="w-6 h-6" />,
       title: "Email",
-      details: "info@rmcabs.com",
-      link: "mailto:info@rmcabs.com"
+      details: "info@rmcabs.in",
+      link: "mailto:info@rmcabs.in"
     },
     {
       icon: <MapPin className="w-6 h-6" />,
@@ -82,8 +82,8 @@ const Contact = () => {
             <Card className="p-8">
               <h2 className="text-2xl font-bold mb-6">Send us a Message</h2>
               <form onSubmit={handleSubmit} className="space-y-4">
-                <div>
-                  <Label htmlFor="name">Full Name</Label>
+                <div className="space-y-2">
+                  <Label htmlFor="name" className="text-foreground font-semibold">Full Name</Label>
                   <Input
                     id="name"
                     placeholder="Your name"
@@ -92,8 +92,8 @@ const Contact = () => {
                     required
                   />
                 </div>
-                <div>
-                  <Label htmlFor="email">Email</Label>
+                <div className="space-y-2">
+                  <Label htmlFor="email" className="text-foreground font-semibold">Email</Label>
                   <Input
                     id="email"
                     type="email"
@@ -103,8 +103,8 @@ const Contact = () => {
                     required
                   />
                 </div>
-                <div>
-                  <Label htmlFor="phone">Phone Number</Label>
+                <div className="space-y-2">
+                  <Label htmlFor="phone" className="text-foreground font-semibold">Phone Number</Label>
                   <Input
                     id="phone"
                     type="tel"
@@ -114,8 +114,8 @@ const Contact = () => {
                     required
                   />
                 </div>
-                <div>
-                  <Label htmlFor="message">Message</Label>
+                <div className="space-y-2">
+                  <Label htmlFor="message" className="text-foreground font-semibold">Message</Label>
                   <Textarea
                     id="message"
                     placeholder="Tell us how we can help you..."

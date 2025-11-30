@@ -10,22 +10,22 @@ import {
 const Home = () => {
   const features = [
     {
-      icon: <Shield className="w-8 h-8" />,
+      icon: <Shield className="w-4 h-4" />,
       title: "Safe & Secure",
       description: "Verified drivers and GPS-tracked rides for your safety"
     },
     {
-      icon: <Clock className="w-8 h-8" />,
+      icon: <Clock className="w-4 h-4" />,
       title: "24/7 Available",
       description: "Book anytime, anywhere in Bangalore"
     },
     {
-      icon: <Star className="w-8 h-8" />,
+      icon: <Star className="w-4 h-4" />,
       title: "Top Rated",
       description: "4.8+ rating from 10,000+ happy customers"
     },
     {
-      icon: <Car className="w-8 h-8" />,
+      icon: <Car className="w-4 h-4" />,
       title: "Premium Fleet",
       description: "Well-maintained vehicles for comfortable rides"
     }
@@ -132,24 +132,32 @@ const Home = () => {
       </section>
 
       {/* Features */}
-      <section className="py-16 bg-muted/30">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <section 
+        className="py-6 border-b relative overflow-hidden"
+        style={{
+          backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.95)), url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23fcd34d' fill-opacity='0.08'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'repeat'
+        }}
+      >
+        <div className="container mx-auto px-4 max-w-2xl relative z-10">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
             {features.map((feature, index) => (
-              <Card key={index} className="p-6 text-center hover-lift border-none shadow-md">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4 text-primary">
+              <div key={index} className="group flex flex-col items-center text-center p-3 rounded-lg hover:bg-white/90 backdrop-blur-sm transition-all duration-200 bg-white/70 shadow-sm">
+                <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center mb-2 text-primary group-hover:bg-primary group-hover:text-white transition-all duration-200">
                   {feature.icon}
                 </div>
-                <h3 className="text-lg font-bold mb-2">{feature.title}</h3>
-                <p className="text-sm text-muted-foreground">{feature.description}</p>
-              </Card>
+                <h3 className="text-xs font-semibold mb-1 text-foreground">{feature.title}</h3>
+                <p className="text-[10px] text-muted-foreground leading-tight">{feature.description}</p>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
       {/* Services */}
-      <section className="py-20">
+      <section className="py-20 bg-muted/30">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Services in Bangalore</h2>

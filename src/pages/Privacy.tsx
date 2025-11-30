@@ -96,7 +96,7 @@ const Privacy = () => {
                 <li>• <strong>Data Portability:</strong> Receive your data in a structured format</li>
               </ul>
               <p className="text-sm text-muted-foreground">
-                To exercise these rights, contact us at info@rmcabs.com
+                To exercise these rights, contact us at info@rmcabs.in
               </p>
             </Card>
 
@@ -160,7 +160,7 @@ const Privacy = () => {
                 For privacy-related questions or concerns:
               </p>
               <ul className="space-y-2 text-muted-foreground">
-                <li>• <strong>Email:</strong> info@rmcabs.com</li>
+                <li>• <strong>Email:</strong> info@rmcabs.in</li>
                 <li>• <strong>Phone:</strong> +91 73490 91759 / +91 87924 56886</li>
                 <li>• <strong>Main Office:</strong> 109/78, 2nd Floor, HSR Layout, Bangalore, Karnataka 560102</li>
                 <li>• <strong>Home Office:</strong> Adharshanagar, Arishankunte, Nelamangala, Bangalore 562123</li>

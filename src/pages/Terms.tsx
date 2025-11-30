@@ -113,7 +113,7 @@ const Terms = () => {
               </p>
               <ul className="space-y-2 text-muted-foreground">
                 <li>• Phone: +91 73490 91759 / +91 87924 56886</li>
-                <li>• Email: info@rmcabs.com</li>
+                <li>• Email: info@rmcabs.in</li>
                 <li>• Main Office: 109/78, 2nd Floor, HSR Layout, Bangalore, Karnataka 560102</li>
                 <li>• Home Office: Adharshanagar, Arishankunte, Nelamangala, Bangalore 562123</li>
               </ul>

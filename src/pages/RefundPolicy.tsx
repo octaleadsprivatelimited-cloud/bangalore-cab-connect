@@ -208,7 +208,7 @@ const RefundPolicy = () => {
               </p>
               <ul className="space-y-2 text-muted-foreground">
                 <li>• <strong>Phone:</strong> +91 73490 91759 / +91 87924 56886</li>
-                <li>• <strong>Email:</strong> info@rmcabs.com</li>
+                <li>• <strong>Email:</strong> info@rmcabs.in</li>
                 <li>• <strong>WhatsApp:</strong> +91 73490 91759</li>
                 <li>• <strong>Support Hours:</strong> 24/7 Available</li>
               </ul>
