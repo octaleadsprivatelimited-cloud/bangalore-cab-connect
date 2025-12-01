@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Phone, Mail, MapPin, Facebook, Twitter, Instagram } from "lucide-react";
+import { Phone, Mail, Facebook, Twitter, Instagram, Car, Sparkles, ArrowRight } from "lucide-react";
 
 const Footer = () => {
   const serviceLinks = [
@@ -17,74 +17,86 @@ const Footer = () => {
     { to: "/bangalore-to-tirupati", label: "Bangalore to Tirupati" },
   ];
 
-  const companyLinks = [
-    { to: "/about", label: "About Us" },
-    { to: "/fleet", label: "Our Fleet" },
-    { to: "/testimonials", label: "Testimonials" },
-    { to: "/offers", label: "Offers" },
-    { to: "/blog", label: "Blog" },
-  ];
-
-  const legalLinks = [
-    { to: "/terms", label: "Terms & Conditions" },
-    { to: "/privacy", label: "Privacy Policy" },
-    { to: "/refund", label: "Refund Policy" },
-  ];
 
   return (
-    <footer className="bg-secondary text-secondary-foreground">
-      <div className="container mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+    <footer className="relative bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white overflow-hidden">
+      {/* Background decorative elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 left-0 w-80 h-80 bg-yellow-500/5 rounded-full blur-3xl"></div>
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/3 rounded-full blur-3xl"></div>
+      </div>
+
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-10 relative z-10">
+        {/* Main Footer Content */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 lg:gap-10 mb-6 md:mb-8">
           {/* Company Info */}
-          <div>
-            <div className="flex items-center space-x-2 mb-4">
-              <div className="w-10 h-10 bg-primary rounded-full flex items-center justify-center">
-                <span className="text-2xl">🚖</span>
+          <div className="sm:col-span-2 lg:col-span-1">
+            <div className="flex items-center gap-3 mb-4">
+              <div className="w-12 h-12 bg-gradient-to-br from-primary to-yellow-500 rounded-xl flex items-center justify-center shadow-lg shadow-primary/20">
+                <Car className="w-6 h-6 text-white" />
               </div>
               <div>
-                <h3 className="text-lg font-bold">RM Cabs</h3>
-                <p className="text-xs text-secondary-foreground/70">Premium Taxi Service</p>
+                <h3 className="text-xl md:text-2xl font-bold bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent">
+                  RM Cabs
+                </h3>
+                <p className="text-xs md:text-sm text-white/60 flex items-center gap-1">
+                  <Sparkles className="w-3 h-3" />
+                  Premium Taxi Service
+                </p>
               </div>
             </div>
-            <p className="text-sm text-secondary-foreground/80 mb-4">
+            <p className="text-sm md:text-base text-white/70 mb-4 leading-relaxed">
               Your trusted partner for comfortable and reliable cab services in Bangalore and beyond.
             </p>
+            
+            {/* Contact Info */}
             <div className="space-y-2">
-              <a href="tel:+917349091759" className="flex items-center gap-2 text-sm hover:text-primary transition-colors">
-                <Phone className="w-4 h-4" />
-                +91 73490 91759
-              </a>
-              <a href="tel:+918792456886" className="flex items-center gap-2 text-sm hover:text-primary transition-colors">
-                <Phone className="w-4 h-4" />
-                +91 87924 56886
-              </a>
-              <a href="mailto:info@rmcabs.in" className="flex items-center gap-2 text-sm hover:text-primary transition-colors">
-                <Mail className="w-4 h-4" />
-                info@rmcabs.in
-              </a>
-              <div className="flex items-start gap-2 text-sm">
-                <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0" />
-                <div>
-                  <p className="font-semibold">Main Office:</p>
-                  <p>109/78, 2nd Floor, HSR Layout, Bangalore, Karnataka 560102</p>
-                  <p className="font-semibold mt-2">Home Office:</p>
-                  <p>Adharshanagar, Arishankunte, Nelamangala, Bangalore 562123</p>
+              <a 
+                href="tel:+917349091759" 
+                className="flex items-center gap-3 text-sm md:text-base text-white/80 hover:text-primary transition-all duration-300 hover:translate-x-1 group"
+              >
+                <div className="w-9 h-9 bg-white/10 backdrop-blur-sm rounded-lg flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                  <Phone className="w-4 h-4 text-primary" />
                 </div>
-              </div>
+                <span>+91 73490 91759</span>
+              </a>
+              <a 
+                href="tel:+918792456886" 
+                className="flex items-center gap-3 text-sm md:text-base text-white/80 hover:text-primary transition-all duration-300 hover:translate-x-1 group"
+              >
+                <div className="w-9 h-9 bg-white/10 backdrop-blur-sm rounded-lg flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                  <Phone className="w-4 h-4 text-primary" />
+                </div>
+                <span>+91 87924 56886</span>
+              </a>
+              <a 
+                href="mailto:info@rmcabs.in" 
+                className="flex items-center gap-3 text-sm md:text-base text-white/80 hover:text-primary transition-all duration-300 hover:translate-x-1 group"
+              >
+                <div className="w-9 h-9 bg-white/10 backdrop-blur-sm rounded-lg flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                  <Mail className="w-4 h-4 text-primary" />
+                </div>
+                <span>info@rmcabs.in</span>
+              </a>
             </div>
           </div>
 
           {/* Services */}
           <div>
-            <h4 className="font-bold mb-4">Our Services</h4>
+            <h4 className="font-bold text-lg md:text-xl mb-4 text-white flex items-center gap-2">
+              <div className="w-1 h-6 bg-gradient-to-b from-primary to-yellow-500 rounded-full"></div>
+              Our Services
+            </h4>
             <ul className="space-y-2">
               {serviceLinks.map((link) => (
                 <li key={link.to}>
                   <Link
                     to={link.to}
-                    className="text-sm text-secondary-foreground/80 hover:text-primary transition-colors"
+                    className="text-sm md:text-base text-white/70 hover:text-primary transition-all duration-300 flex items-center gap-2 group"
                   >
-                    {link.label}
+                    <ArrowRight className="w-3 h-3 opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all duration-300" />
+                    <span className="group-hover:translate-x-1 transition-transform duration-300">{link.label}</span>
                   </Link>
                 </li>
               ))}
@@ -93,67 +105,90 @@ const Footer = () => {
 
           {/* Popular Routes */}
           <div>
-            <h4 className="font-bold mb-4">Popular Routes</h4>
+            <h4 className="font-bold text-lg md:text-xl mb-4 text-white flex items-center gap-2">
+              <div className="w-1 h-6 bg-gradient-to-b from-primary to-yellow-500 rounded-full"></div>
+              Popular Routes
+            </h4>
             <ul className="space-y-2">
               {popularRoutes.map((link) => (
                 <li key={link.to}>
                   <Link
                     to={link.to}
-                    className="text-sm text-secondary-foreground/80 hover:text-primary transition-colors"
+                    className="text-sm md:text-base text-white/70 hover:text-primary transition-all duration-300 flex items-center gap-2 group"
                   >
-                    {link.label}
+                    <ArrowRight className="w-3 h-3 opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all duration-300" />
+                    <span className="group-hover:translate-x-1 transition-transform duration-300">{link.label}</span>
                   </Link>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Company & Legal */}
+          {/* Office Addresses */}
           <div>
-            <h4 className="font-bold mb-4">Company</h4>
-            <ul className="space-y-2 mb-6">
-              {companyLinks.map((link) => (
-                <li key={link.to}>
-                  <Link
-                    to={link.to}
-                    className="text-sm text-secondary-foreground/80 hover:text-primary transition-colors"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-            <h4 className="font-bold mb-4">Legal</h4>
-            <ul className="space-y-2">
-              {legalLinks.map((link) => (
-                <li key={link.to}>
-                  <Link
-                    to={link.to}
-                    className="text-sm text-secondary-foreground/80 hover:text-primary transition-colors"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
+            <h4 className="font-bold text-lg md:text-xl mb-4 text-white flex items-center gap-2">
+              <div className="w-1 h-6 bg-gradient-to-b from-primary to-yellow-500 rounded-full"></div>
+              Our Offices
+            </h4>
+            <div className="space-y-3">
+              <div>
+                <p className="font-semibold text-white mb-2 text-sm md:text-base">Main Office:</p>
+                <p className="text-sm md:text-base text-white/70 leading-relaxed">
+                  109/78, 2nd Floor, HSR Layout, Bangalore, Karnataka 560102
+                </p>
+              </div>
+              <div>
+                <p className="font-semibold text-white mb-2 text-sm md:text-base">Home Office:</p>
+                <p className="text-sm md:text-base text-white/70 leading-relaxed">
+                  Adharshanagar, Arishankunte, Nelamangala, Bangalore 562123
+                </p>
+              </div>
+            </div>
           </div>
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-secondary-foreground/20 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-sm text-secondary-foreground/70">
-            © 2024 RM Cabs. All rights reserved.
-          </p>
-          <div className="flex gap-4 mt-4 md:mt-0">
-            <a href="#" className="text-secondary-foreground/70 hover:text-primary transition-colors">
-              <Facebook className="w-5 h-5" />
-            </a>
-            <a href="#" className="text-secondary-foreground/70 hover:text-primary transition-colors">
-              <Twitter className="w-5 h-5" />
-            </a>
-            <a href="#" className="text-secondary-foreground/70 hover:text-primary transition-colors">
-              <Instagram className="w-5 h-5" />
-            </a>
+        <div className="border-t border-white/10 pt-4 md:pt-6">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4 md:gap-6">
+            {/* Copyright */}
+            <div className="text-center md:text-left">
+              <p className="text-xs md:text-sm text-white/60 leading-relaxed">
+                © 2025 RM Cabs. All rights reserved. developed by{" "}
+                <a 
+                  href="https://www.octaleads.com" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-primary hover:text-yellow-500 transition-colors duration-300 font-semibold underline underline-offset-2 hover:underline-offset-4"
+                >
+                  octaleads private limited
+                </a>
+              </p>
+            </div>
+            
+            {/* Social Media */}
+            <div className="flex gap-4">
+              <a 
+                href="#" 
+                className="w-10 h-10 bg-white/10 backdrop-blur-sm rounded-lg flex items-center justify-center text-white/70 hover:text-primary hover:bg-primary/20 transition-all duration-300 hover:scale-110 hover:-translate-y-1"
+                aria-label="Facebook"
+              >
+                <Facebook className="w-5 h-5" />
+              </a>
+              <a 
+                href="#" 
+                className="w-10 h-10 bg-white/10 backdrop-blur-sm rounded-lg flex items-center justify-center text-white/70 hover:text-primary hover:bg-primary/20 transition-all duration-300 hover:scale-110 hover:-translate-y-1"
+                aria-label="Twitter"
+              >
+                <Twitter className="w-5 h-5" />
+              </a>
+              <a 
+                href="#" 
+                className="w-10 h-10 bg-white/10 backdrop-blur-sm rounded-lg flex items-center justify-center text-white/70 hover:text-primary hover:bg-primary/20 transition-all duration-300 hover:scale-110 hover:-translate-y-1"
+                aria-label="Instagram"
+              >
+                <Instagram className="w-5 h-5" />
+              </a>
+            </div>
           </div>
         </div>
       </div>
