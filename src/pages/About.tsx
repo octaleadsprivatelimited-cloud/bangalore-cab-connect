@@ -68,17 +68,17 @@ const About = () => {
                 <span className="bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-semibold">
                   Who We Are
                 </span>
-              </div>
+                </div>
               <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text text-transparent">
                 Leading Taxi Service in Bangalore
               </h2>
-            </div>
-            
+          </div>
+
             <Card className="p-8 md:p-12 bg-white/90 backdrop-blur-md border-2 border-primary/10 shadow-xl">
               <p className="text-base md:text-lg text-foreground/80 leading-relaxed mb-6">
-                RM Cabs is a leading taxi service provider in Bangalore, offering reliable and comfortable transportation 
-                solutions. We specialize in airport transfers, local city rides, outstation trips, and corporate travel services.
-              </p>
+              RM Cabs is a leading taxi service provider in Bangalore, offering reliable and comfortable transportation 
+              solutions. We specialize in airport transfers, local city rides, outstation trips, and corporate travel services.
+            </p>
               <p className="text-base md:text-lg text-foreground/80 leading-relaxed">
                 With over 10 years of experience in the transportation industry, we've built a reputation for excellence, 
                 safety, and customer satisfaction. Our commitment to quality service has made us the preferred choice for 
@@ -189,7 +189,7 @@ const About = () => {
                   </div>
                   
                   <p className="text-sm md:text-base text-white/90 leading-relaxed text-center drop-shadow-sm">
-                    To provide safe, punctual, and affordable cab services that exceed customer expectations. We are committed to 
+              To provide safe, punctual, and affordable cab services that exceed customer expectations. We are committed to 
                     making every journey comfortable and hassle-free for our valued customers across Bangalore. Our mission is to 
                     transform the way people travel by offering premium transportation services that prioritize safety, comfort, and 
                     reliability.
@@ -308,10 +308,10 @@ const About = () => {
 
             <Card className="p-8 md:p-12 bg-white/10 backdrop-blur-md border-2 border-white/30 hover:border-white/50 shadow-xl transition-all duration-300">
               <p className="text-base md:text-lg text-white/90 leading-relaxed mb-6 drop-shadow-sm">
-                We are dedicated to maintaining the highest standards of service quality. Our drivers undergo thorough background 
-                checks and training to ensure your safety and comfort. Every vehicle in our fleet is regularly maintained and 
-                sanitized to provide you with a pleasant travel experience.
-              </p>
+              We are dedicated to maintaining the highest standards of service quality. Our drivers undergo thorough background 
+              checks and training to ensure your safety and comfort. Every vehicle in our fleet is regularly maintained and 
+              sanitized to provide you with a pleasant travel experience.
+            </p>
               <div className="grid md:grid-cols-2 gap-4 mt-8">
                 <div className="flex items-start gap-3">
                   <CheckCircle2 className="w-6 h-6 text-yellow-300 flex-shrink-0 mt-1 drop-shadow-md" />
@@ -457,10 +457,10 @@ const About = () => {
               <div className="flex items-center gap-1.5">
                 <CheckCircle2 className="w-4 h-4 text-yellow-300" />
                 <span>24/7 Available</span>
-              </div>
-            </div>
           </div>
         </div>
+      </div>
+      </div>
       </section>
     </div>
   );

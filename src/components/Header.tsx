@@ -1,7 +1,9 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, Phone, Car } from "lucide-react";
+import { Menu, X, Phone } from "lucide-react";
 import { Button } from "./ui/button";
+
+const logoImage = "/rmcabs.png";
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -36,26 +38,31 @@ const Header = () => {
       }`}
     >
       <div className="container mx-auto px-4 lg:px-6">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-14">
           {/* Logo */}
           <Link
             to="/"
-            className="flex items-center space-x-2 group transition-transform hover:scale-105"
+            className="flex items-center group transition-transform hover:scale-105 h-full"
           >
-            <div className="relative">
-              <div className="w-10 h-10 bg-gradient-to-br from-primary to-primary/80 rounded-lg flex items-center justify-center shadow-md group-hover:shadow-lg transition-shadow">
-                <Car className="w-5 h-5 text-secondary" />
-              </div>
-              <div className="absolute -top-0.5 -right-0.5 w-3 h-3 bg-green-500 rounded-full border-2 border-white animate-pulse" />
-            </div>
-            <div className="hidden sm:block">
-              <h1 className="text-base font-bold text-secondary tracking-tight">
-                RM Cabs
-              </h1>
-              <p className="text-[10px] text-muted-foreground font-medium">
-                Premium Taxi Service
-              </p>
-            </div>
+            <img 
+              src="/rmcabs.png" 
+              alt="RM Cabs Logo" 
+              className="object-contain h-full w-auto"
+              style={{ 
+                height: '100%',
+                maxHeight: '56px',
+                display: 'block'
+              }}
+              loading="eager"
+              onError={(e) => {
+                const target = e.target as HTMLImageElement;
+                console.error('Failed to load logo:', target.src);
+                // Try alternative path
+                if (!target.src.includes('rmcabs.png')) {
+                  target.src = '/rmcabs.png';
+                }
+              }}
+            />
           </Link>
 
           {/* Desktop Navigation */}

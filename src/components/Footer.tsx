@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Phone, Mail, Facebook, Twitter, Instagram, Car, Sparkles, ArrowRight } from "lucide-react";
+import { Phone, Mail, Facebook, Twitter, Instagram, Sparkles, ArrowRight } from "lucide-react";
 
 const Footer = () => {
   const serviceLinks = [
@@ -33,9 +33,15 @@ const Footer = () => {
           {/* Company Info */}
           <div className="sm:col-span-2 lg:col-span-1">
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-12 h-12 bg-gradient-to-br from-primary to-yellow-500 rounded-xl flex items-center justify-center shadow-lg shadow-primary/20">
-                <Car className="w-6 h-6 text-white" />
-              </div>
+              <img 
+                src="/rmcabs.png" 
+                alt="RM Cabs Logo" 
+                className="w-12 h-12 object-contain"
+                onError={(e) => {
+                  const target = e.target as HTMLImageElement;
+                  target.style.display = 'none';
+                }}
+              />
               <div>
                 <h3 className="text-xl md:text-2xl font-bold bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent">
                   RM Cabs
