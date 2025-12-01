@@ -21,8 +21,9 @@ const BookingForm = ({ inline = false }: BookingFormProps) => {
     tripType: "",
     vehicleType: "",
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
     // Basic validation
@@ -36,19 +37,48 @@ const BookingForm = ({ inline = false }: BookingFormProps) => {
       return;
     }
 
-    toast.success("Booking request submitted! We'll contact you shortly.");
-    
-    // Reset form
-    setFormData({
-      name: "",
-      mobile: "",
-      pickup: "",
-      drop: "",
-      date: "",
-      time: "",
-      tripType: "",
-      vehicleType: "",
-    });
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch("https://formspree.io/f/mpwvrqgv", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          mobile: formData.mobile,
+          pickup: formData.pickup,
+          drop: formData.drop,
+          date: formData.date || "Not specified",
+          time: formData.time || "Not specified",
+          tripType: formData.tripType || "Not specified",
+          vehicleType: formData.vehicleType || "Not specified",
+          _subject: "New Cab Booking Request - RM Cabs",
+        }),
+      });
+
+      if (response.ok) {
+        toast.success("Booking request submitted! We'll contact you shortly.");
+        // Reset form
+        setFormData({
+          name: "",
+          mobile: "",
+          pickup: "",
+          drop: "",
+          date: "",
+          time: "",
+          tripType: "",
+          vehicleType: "",
+        });
+      } else {
+        toast.error("Failed to submit booking. Please try again.");
+      }
+    } catch (error) {
+      toast.error("Failed to submit booking. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const containerClass = inline
@@ -118,10 +148,11 @@ const BookingForm = ({ inline = false }: BookingFormProps) => {
 
         <Button
           type="submit"
-          className="w-full mt-3 bg-primary text-primary-foreground hover:bg-primary/90 font-semibold py-2 text-xs h-8"
+          disabled={isSubmitting}
+          className="w-full mt-3 bg-primary text-primary-foreground hover:bg-primary/90 font-semibold py-2 text-xs h-8 disabled:opacity-50 disabled:cursor-not-allowed"
         >
           <Car className="w-3 h-3 mr-1.5" />
-          Book Now
+          {isSubmitting ? "Submitting..." : "Book Now"}
         </Button>
       </form>
     );
@@ -240,10 +271,11 @@ const BookingForm = ({ inline = false }: BookingFormProps) => {
 
       <Button
         type="submit"
-        className="w-full mt-6 bg-primary text-primary-foreground hover:bg-primary/90 font-semibold py-6 text-lg"
+        disabled={isSubmitting}
+        className="w-full mt-6 bg-primary text-primary-foreground hover:bg-primary/90 font-semibold py-6 text-lg disabled:opacity-50 disabled:cursor-not-allowed"
       >
         <Car className="w-5 h-5 mr-2" />
-        Book Your Cab Now
+        {isSubmitting ? "Submitting..." : "Book Your Cab Now"}
       </Button>
     </form>
   );

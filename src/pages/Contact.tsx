@@ -21,11 +21,38 @@ const Contact = () => {
     phone: "",
     message: ""
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast.success("Message sent! We'll contact you soon.");
-    setFormData({ name: "", email: "", phone: "", message: "" });
+    setIsSubmitting(true);
+    
+    try {
+      const response = await fetch("https://formspree.io/f/mpwvrqgv", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          message: formData.message,
+          _subject: "New Contact Form Submission - RM Cabs",
+        }),
+      });
+
+      if (response.ok) {
+        toast.success("Message sent! We'll contact you soon.");
+        setFormData({ name: "", email: "", phone: "", message: "" });
+      } else {
+        toast.error("Failed to send message. Please try again.");
+      }
+    } catch (error) {
+      toast.error("Failed to send message. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const contactInfo = [
@@ -190,9 +217,10 @@ const Contact = () => {
                     </div>
                     <Button 
                       type="submit" 
-                      className="w-full bg-gradient-to-r from-primary to-yellow-500 text-primary-foreground hover:from-primary/90 hover:to-yellow-500/90 font-semibold h-12 text-base shadow-lg hover:shadow-xl hover:shadow-primary/30 transition-all duration-300 hover:-translate-y-1"
+                      disabled={isSubmitting}
+                      className="w-full bg-gradient-to-r from-primary to-yellow-500 text-primary-foreground hover:from-primary/90 hover:to-yellow-500/90 font-semibold h-12 text-base shadow-lg hover:shadow-xl hover:shadow-primary/30 transition-all duration-300 hover:-translate-y-1 disabled:opacity-50 disabled:cursor-not-allowed"
                     >
-                      Send Message
+                      {isSubmitting ? "Sending..." : "Send Message"}
                       <Send className="w-5 h-5 ml-2" />
                     </Button>
                   </form>

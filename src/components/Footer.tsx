@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Phone, Mail, Facebook, Twitter, Instagram, Sparkles, ArrowRight } from "lucide-react";
+import { Phone, Mail, Facebook, Twitter, Instagram, Sparkles, ArrowRight, Map } from "lucide-react";
 
 const Footer = () => {
   const serviceLinks = [
@@ -170,6 +170,17 @@ const Footer = () => {
                 </a>
               </p>
             </div>
+            
+            {/* Sitemap Link */}
+            <a 
+              href="/sitemap.xml" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 text-xs md:text-sm text-white/60 hover:text-primary transition-all duration-300 group"
+            >
+              <Map className="w-4 h-4 group-hover:scale-110 transition-transform" />
+              <span>Sitemap</span>
+            </a>
             
             {/* Social Media */}
             <div className="flex gap-4">
